@@ -1,0 +1,28 @@
+# F2K Code Owners
+# This file defines code owners for the F2K repository
+# See https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default code owner for all files
+* @dcplatforms
+
+# Component ownership
+/src/components/ @dcplatforms
+/src/pages/ @dcplatforms
+
+# Admin dashboard
+/src/components/AdminDashboard.tsx @dcplatforms
+
+# Recipe Hub (Gemini integration)
+/src/components/RecipeHub.tsx @dcplatforms
+
+# Documentation
+/docs/ @dcplatforms
+*.md @dcplatforms
+
+# Configuration files
+/vite.config.ts @dcplatforms
+/tsconfig.json @dcplatforms
+/package.json @dcplatforms
+
+# GitHub configuration
+/.github/ @dcplatforms
