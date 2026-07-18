@@ -1,0 +1,8 @@
+{
+  "name": "Viar Farms Farm-to-Table Ordering",
+  "description": "An e-commerce system for Viar Farms menu, enabling direct farm-to-table ordering of premium beef, pork, fresh eggs, tallow products, and customized AI recipe generation based on cart items.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
