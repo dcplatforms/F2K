@@ -1,6 +1,6 @@
 import React from 'react';
 import { Product } from '../data';
-import { Plus, Minus, ShoppingCart, Sparkles, AlertCircle } from 'lucide-react';
+import { Plus, Minus, ShoppingCart, AlertCircle } from 'lucide-react';
 
 interface ProductCardProps {
   key?: string;
@@ -8,7 +8,6 @@ interface ProductCardProps {
   quantityInCart: number;
   onAddToCart: (product: Product) => void;
   onRemoveOneFromCart: (productId: string) => void;
-  onAskForRecipe: (product: Product) => void;
 }
 
 export default function ProductCard({
@@ -16,7 +15,6 @@ export default function ProductCard({
   quantityInCart,
   onAddToCart,
   onRemoveOneFromCart,
-  onAskForRecipe,
 }: ProductCardProps) {
   
   // Categorized subtle gradients or backgrounds
@@ -137,15 +135,6 @@ export default function ProductCard({
             <span>Add to Basket</span>
           </button>
         )}
-
-        <button
-          id={`recipe-shortcut-btn-${product.id}`}
-          onClick={() => onAskForRecipe(product)}
-          className="w-full text-[11px] font-medium text-stone-600 hover:text-amber-700 bg-stone-100 hover:bg-amber-50 border border-stone-200 py-1.5 rounded-lg transition-colors flex items-center justify-center gap-1"
-        >
-          <Sparkles className="w-3.5 h-3.5 text-amber-600" />
-          Get Instant Farm Chef Recipe
-        </button>
       </div>
     </div>
   );

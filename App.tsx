@@ -3,10 +3,9 @@ import { CATEGORIES, PRODUCTS, Product } from './data';
 import Navbar from './components/Navbar';
 import ProductCard from './components/ProductCard';
 import CartDrawer from './components/CartDrawer';
-import RecipeHub from './components/RecipeHub';
 import AdminDashboard from './components/AdminDashboard';
 import ViarFarmsLogo from './components/ViarFarmsLogo';
-import { Search, Filter, Sparkles, CheckCircle2, ClipboardList, MapPin, Store, Truck, X, ChefHat } from 'lucide-react';
+import { Search, Filter, CheckCircle2, ClipboardList, MapPin, Store, Truck, X } from 'lucide-react';
 
 interface CartItem {
   product: Product;
@@ -35,7 +34,7 @@ interface Order {
 }
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState<'menu' | 'recipes' | 'dashboard'>('menu');
+  const [activeTab, setActiveTab] = useState<'menu' | 'dashboard'>('menu');
   const [cartItems, setCartItems] = useState<CartItem[]>(() => {
     const saved = localStorage.getItem('viar_farms_cart');
     return saved ? JSON.parse(saved) : [];
@@ -267,12 +266,6 @@ export default function App() {
 
   const cartCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
-  // Quick shortcut helper to jump to recipe tab with a pre-focused product
-  const handleShortcutAskRecipe = (product: Product) => {
-    setActiveTab('recipes');
-    window.scrollTo({ top: 100, behavior: 'smooth' });
-  };
-
   return (
     <div id="app-root" className="min-h-screen bg-stone-50/50 flex flex-col font-sans text-stone-800">
       
@@ -427,7 +420,6 @@ export default function App() {
                         quantityInCart={cartItem ? cartItem.quantity : 0}
                         onAddToCart={handleAddToCart}
                         onRemoveOneFromCart={handleRemoveOneFromCart}
-                        onAskForRecipe={handleShortcutAskRecipe}
                       />
                     );
                   })}
@@ -435,17 +427,6 @@ export default function App() {
               )}
             </div>
           </div>
-        )}
-
-        {activeTab === 'recipes' && (
-          <RecipeHub
-            cartItems={cartItems}
-            onAddProductShortcut={(productId) => {
-              const prod = PRODUCTS.find(p => p.id === productId);
-              if (prod) handleAddToCart(prod);
-            }}
-            allProducts={PRODUCTS}
-          />
         )}
 
         {activeTab === 'dashboard' && (
@@ -560,20 +541,9 @@ export default function App() {
             {/* Actions */}
             <div className="flex gap-3">
               <button
-                id="receipt-recipe-hub-btn"
-                onClick={() => {
-                  setPlacedOrderReceipt(null);
-                  setActiveTab('recipes');
-                }}
-                className="flex-1 bg-amber-600 hover:bg-amber-500 text-stone-950 font-bold py-3 px-4 rounded-xl text-xs transition-all text-center flex items-center justify-center gap-1.5"
-              >
-                <ChefHat className="w-4 h-4" />
-                Get Cooking Recipe
-              </button>
-              <button
                 id="receipt-close-btn"
                 onClick={() => setPlacedOrderReceipt(null)}
-                className="flex-1 bg-stone-900 hover:bg-stone-800 text-white font-semibold py-3 px-4 rounded-xl text-xs transition-all text-center"
+                className="w-full bg-stone-900 hover:bg-stone-800 text-white font-semibold py-3 px-4 rounded-xl text-xs transition-all text-center"
               >
                 Close Receipt
               </button>

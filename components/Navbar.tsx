@@ -1,10 +1,10 @@
 import React from 'react';
-import { ShoppingBag, ChefHat, ShieldCheck, HelpCircle } from 'lucide-react';
+import { ShoppingBag, ShieldCheck } from 'lucide-react';
 import ViarFarmsLogo from './ViarFarmsLogo';
 
 interface NavbarProps {
-  activeTab: 'menu' | 'recipes' | 'dashboard';
-  setActiveTab: (tab: 'menu' | 'recipes' | 'dashboard') => void;
+  activeTab: 'menu' | 'dashboard';
+  setActiveTab: (tab: 'menu' | 'dashboard') => void;
   cartCount: number;
   onOpenCart: () => void;
 }
@@ -37,18 +37,6 @@ export default function Navbar({ activeTab, setActiveTab, cartCount, onOpenCart 
               Browse Meat Menu
             </button>
             <button
-              id="nav-recipes-btn"
-              onClick={() => setActiveTab('recipes')}
-              className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-1.5 ${
-                activeTab === 'recipes'
-                  ? 'bg-amber-600 text-stone-950 shadow-sm font-semibold'
-                  : 'text-stone-300 hover:text-white hover:bg-stone-800'
-              }`}
-            >
-              <ChefHat className="w-4 h-4" />
-              AI Farm Chef Hub
-            </button>
-            <button
               id="nav-office-btn"
               onClick={() => setActiveTab('dashboard')}
               className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-1.5 ${
@@ -64,14 +52,6 @@ export default function Navbar({ activeTab, setActiveTab, cartCount, onOpenCart 
 
           {/* Cart Trigger & Actions */}
           <div className="flex items-center space-x-3">
-            <button
-              id="mobile-nav-recipes-btn"
-              onClick={() => setActiveTab('recipes')}
-              className="md:hidden p-2 text-stone-300 hover:text-white rounded-full hover:bg-stone-800"
-              title="AI Recipes"
-            >
-              <ChefHat className="w-5 h-5" />
-            </button>
             <button
               id="mobile-nav-office-btn"
               onClick={() => setActiveTab('dashboard')}
