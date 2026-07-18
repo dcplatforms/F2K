@@ -10,8 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial farm-to-table e-commerce platform release
 - React 19 + TypeScript frontend with Vite build
-- Express.js backend with Google Gemini API integration
-- AI-powered recipe generation from cart items
+- Express.js backend for cart and order management
 - Shopping cart and order management system
 - Admin dashboard for farm inventory management
 - GitHub Pages deployment automation

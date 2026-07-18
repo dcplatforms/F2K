@@ -26,7 +26,6 @@ Thank you for your interest in contributing to F2K! This document provides guide
 3. **Set up environment variables** - See [DEVELOPMENT.md](DEVELOPMENT.md)
    ```bash
    cp .env.example .env.local
-   # Edit .env.local with your Google Gemini API key
    ```
 
 4. **Start development server**
@@ -46,7 +45,7 @@ Thank you for your interest in contributing to F2K! This document provides guide
 - Docs: `docs/what-you-changed`
 - Chore: `chore/what-you-changed`
 
-Example: `feature/ai-recipe-optimization`, `fix/cart-total-calculation`
+Example: `feature/square-integration`, `fix/cart-total-calculation`
 
 ### Commit Messages
 Follow [Conventional Commits](https://www.conventionalcommits.org/):
@@ -62,7 +61,7 @@ footer (optional)
 **Scope**: component or file affected
 
 **Examples:**
-- `feat(recipe): add AI-powered recipe generation from cart`
+- `feat(checkout): integrate Square payment processing`
 - `fix(cart): resolve total calculation bug`
 - `docs(setup): update development environment guide`
 

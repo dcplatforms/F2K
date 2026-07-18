@@ -1,54 +1,45 @@
 # GitHub Secrets Configuration
 
-This guide explains how to set up and manage secrets for the F2K repository.
+This guide explains how to manage secrets for the F2K repository.
 
-## Required Secrets
+## Current Status
 
-### GEMINI_API_KEY
-**Purpose**: Google Gemini API access for AI recipe generation
+F2K currently requires **no external API keys or secrets** to run. All features use local data and mock implementations.
 
-**Setup Instructions:**
+## Future Expansion
 
-1. **Get API Key:**
-   - Visit https://aistudio.google.com/app/apikey
-   - Click "Create API Key"
-   - Copy the key value
+If you need to add secrets in the future (for integrations with external services, deployment credentials, etc.), follow this process:
 
-2. **Add to GitHub:**
-   - Go to Settings → Secrets and variables → Actions
+## Adding a Secret
+
+1. **Go to Repository Settings:**
+   - Settings → Secrets and variables → Actions
+
+2. **Create New Secret:**
    - Click "New repository secret"
-   - Name: `GEMINI_API_KEY`
-   - Value: Paste your API key
+   - Name: `YOUR_SECRET_NAME` (use UPPERCASE with underscores)
+   - Value: Your secret value
    - Click "Add secret"
 
 3. **Using in Workflows:**
    ```yaml
    env:
-     GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+     YOUR_SECRET_NAME: ${{ secrets.YOUR_SECRET_NAME }}
    ```
 
 4. **Using in Local Development:**
    - Add to `.env.local`:
      ```
-     VITE_GEMINI_API_KEY=your_api_key_here
+     VITE_YOUR_SECRET_NAME=your_value_here
      ```
    - **Never commit `.env.local`** - it's in `.gitignore`
-
-## Secret Rotation
-
-To rotate a secret:
-
-1. Create new API key in Google AI Studio
-2. Update the secret value in GitHub Settings
-3. Test that CI/CD pipeline still works
-4. Delete old API key from Google AI Studio
 
 ## Security Best Practices
 
 - ✅ Secrets are encrypted and only exposed to Actions
 - ✅ Log all access to secrets (GitHub audit logs)
-- ✅ Rotate keys periodically (quarterly recommended)
 - ✅ Use separate keys for development and production
+- ✅ Rotate keys periodically
 - ❌ Never print secrets to logs
 - ❌ Never commit secrets to version control
 - ❌ Never share secrets in issues or PRs

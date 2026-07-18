@@ -34,21 +34,14 @@ Create `.env.local` in project root:
 cp .env.example .env.local
 ```
 
-**Required Environment Variables:**
+**Environment Variables:**
 
 ```env
-# Google Gemini API (for recipe generation)
-VITE_GEMINI_API_KEY=your_api_key_here
-
 # Server Configuration
 VITE_API_URL=http://localhost:3001
 ```
 
-**Get Gemini API Key:**
-1. Visit [Google AI Studio](https://aistudio.google.com/app/apikey)
-2. Click "Create API Key"
-3. Copy the key
-4. Paste into `.env.local`
+No external API keys are required to run F2K locally.
 
 ### 4. Start Development Environment
 
