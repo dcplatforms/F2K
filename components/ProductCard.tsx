@@ -1,6 +1,6 @@
 import React from 'react';
 import { Product } from '../data';
-import { Plus, Minus, ShoppingCart, AlertCircle } from 'lucide-react';
+import { Plus, Minus, ShoppingCart, AlertCircle, Sparkles } from 'lucide-react';
 
 interface ProductCardProps {
   key?: string;
