@@ -527,17 +527,6 @@ export default function App() {
               </div>
             </div>
 
-            {/* Prompt for Chef */}
-            <div className="bg-amber-50 border border-amber-200/50 p-4 rounded-xl flex items-start gap-3">
-              <ChefHat className="w-6 h-6 text-amber-600 shrink-0 mt-0.5" />
-              <div className="text-xs">
-                <p className="font-bold text-amber-950">Suggesting custom recipe steps...</p>
-                <p className="text-stone-600 mt-1">
-                  Want to cook these cuts perfectly? Head straight to the <strong className="text-amber-800">AI Farm Chef Hub</strong> in the main navigation. It is fully loaded with your active order ingredients to generate perfect culinary instructions instantly!
-                </p>
-              </div>
-            </div>
-
             {/* Actions */}
             <div className="flex gap-3">
               <button
