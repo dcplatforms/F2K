@@ -1,0 +1,18 @@
+# Code Owners
+# Default owner for all files
+* @dcplatforms
+
+# Frontend components
+/src/components/ @dcplatforms
+
+# Backend
+/server.ts @dcplatforms
+
+# Configuration
+/vite.config.ts @dcplatforms
+/tsconfig.json @dcplatforms
+/package.json @dcplatforms
+
+# Documentation
+/*.md @dcplatforms
+/.github/ @dcplatforms
